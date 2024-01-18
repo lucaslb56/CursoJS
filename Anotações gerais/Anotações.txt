@@ -1,0 +1,15 @@
+FUNÇÕES DE STRING
+    É possível usar \ para escapar caracteres especiais dentro de strings
+    indexOf(texto) -> Busca o indice do inicio do texto passado por parâmetro
+    lastIndexOf(texto) -> Busca o indice do fim do texto passado por parâmetro
+    match() -> retorna o texto que condiz com a expressão regular passada por parâmetro
+    replace() -> substitui o texto passado no primeiro parâmetro pelo passado no segundo na string
+(permite expressões regulares)
+    length -> atributo que retorna o tamanho da string
+    slice -> retorna um pedaço da string conforme indices passados por parâmetro podendo usar indices negativos
+    substring -> retorna um pedaço da string conforme indices passados por parâmetro
+    split -> Separa a string pelo caracter passado por parametro e retorna uma lista
+    toUberCase -> transforma tudo em letras maiusculas
+    toLowerCase -> transforma tudo em letras minusculas
+
+Valores primitivos são copiado

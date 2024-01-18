@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <input placeholder="Nome" type="text" id="nome">
+        <input placeholder="Sobrenome" type="text" id="sobrenome">
+        <input placeholder="Peso" type="text" id="peso">
+        <input placeholder="Altura" type="text" id="altura">
+        <input id="enviar" type="button" value="Enviar">
+    </form>
+
+    <script>
+        const pessoas = [];
+        const form = document.getElementById("enviar");
+        form.addEventListener("click", addPessoa);
+
+        function addPessoa(){
+            nome = document.getElementById("nome")
+            sobrenome = document.getElementById("sobrenome")
+            peso = document.getElementById("peso")
+            altura = document.getElementById("altura")
+
+            pessoa = {
+                nome:nome.value,
+                sobrenome:sobrenome.value,
+                peso:peso.value,
+                altura:altura.value
+            }
+            pessoas.push(pessoa)
+        }
+    </script>
+</body>
+</html>
