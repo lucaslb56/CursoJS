@@ -1,50 +1,24 @@
-let segs = 0
-let timer;
-let crom;
-const cronometro = document.getElementById("relogio") 
-const iniciar = document.getElementById("iniciar") 
-const pausar = document.getElementById("pausar") 
-const zerar = document.getElementById("zerar") 
-console.log("iniciando")
-function getCrom(segs){
-    crom = new Date(segs*1000)
+const btAdicionar = document.getElementById("adicionar")
+const inpTarefa = document.getElementById("tarefa")
+const listaTarefas = document.getElementById("listaTarefas")
+let contador = 0;
 
-    cronometro.innerText = crom.toLocaleTimeString('pt-BR', {
-        hour12:false,
-        timeZone: 'GMT'
-    })
-
+function adicionar() {
+    contador++;
+    txtTarefa = inpTarefa.value;
+    linhaTarefa = `<tr id="T${contador}">
+                        <td>${contador}</td>
+                        <td>${txtTarefa}</td>
+                        <td><button  onclick="apagar(${contador})">Apagar</button></td>
+                    </tr>`;
+    listaTarefas.innerHTML += linhaTarefa;
 }
 
-function start() {
-    cronometro.style.color = "black";
-    timer = setInterval(() => {
-        segs++;
-        getCrom(segs);
-    }, 1000);
-    timer   
-}
+btAdicionar.addEventListener("click", (e) => {
+    adicionar();
+})
 
-function pause(){
-    clearInterval(timer);
-    cronometro.style.color = "red";
-}
-
-function zera() {
-    cronometro.style.color = "black";
-    clearInterval(timer);
-    segs = 0;
-    getCrom(segs);
+function apagar(id) {
+    document.getElementById("T"+id).remove()
     
 }
-
-iniciar.addEventListener("click", function (event) {
-    start();
-})
-pausar.addEventListener("click", function (event) {
-    pause();
-})
-zerar.addEventListener("click", function (event) {
-    zera();
-})
-
