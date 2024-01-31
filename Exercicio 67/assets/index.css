@@ -1,0 +1,10 @@
+#listaTarefas {
+    border: solid 1px;
+    margin-top: 10px;
+}
+
+th, td {
+    border: solid 1px;
+    margin: 0;
+    padding: 5px;
+}
